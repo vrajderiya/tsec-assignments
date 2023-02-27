@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Addition') {
+            steps {
+                script{
+                    int c = a.toInteger()+b.toInteger()
+                    echo "${c}"    
+                }
+                
+            }
+        }
+        stage('Multiplication') {
+            steps {
+                script{
+                    int c = a.toInteger()*b.toInteger()
+                    echo "${c}"    
+                }
+            }
+        }
+        stage('Subtraction') {
+            steps {
+                script{
+                    int c = a.toInteger()-b.toInteger()
+                    echo "${c}"    
+                }
+            }
+        }
+    	stage('Division') {
+    		steps {
+    			script{
+                    int c = a.toInteger()/b.toInteger()
+                    echo "${c}"    
+                }
+    		}
+    	}
+    	stage('Python') {
+    		steps {
+    			script{
+                    print("Hello") 
+                }
+    		}
+    	}
+    }
+}
